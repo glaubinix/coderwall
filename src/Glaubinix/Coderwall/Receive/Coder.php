@@ -2,7 +2,7 @@
 
 namespace Glaubinix\Coderwall\Receive;
 
-class Coder {
+class Coder extends Entity {
 
 	/**
 	 * @var string
@@ -37,6 +37,28 @@ class Coder {
 	/**
 	 * @var integer
 	 */
-	public $endorsement;
+	public $endorsements;
+
+	protected function setObjectEntities($input) {
+		if (isset($input['badges'])) {
+			$this->badges = array();
+			foreach ($input['badges'] as $raw) {
+				array_push($this->badges, new Badge($raw));
+			}
+
+			unset($input['badges']);
+		}
+
+		if (isset($input['accounts'])) {
+			$this->accounts = array();
+			foreach ($input['accounts'] as $type => $username) {
+				array_push($this->accounts, new Account(array('type' => $type, 'username' => $username)));
+			}
+
+			unset($input['accounts']);
+		}
+
+		return $input;
+	}
 
 }

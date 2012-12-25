@@ -2,7 +2,7 @@
 
 namespace Glaubinix\Coderwall\Receive;
 
-class Badge {
+class Badge extends Entity {
 
 	/**
 	 * @var string

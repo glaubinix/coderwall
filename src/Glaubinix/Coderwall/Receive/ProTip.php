@@ -2,7 +2,10 @@
 
 namespace Glaubinix\Coderwall\Receive;
 
-class ProTip {
+/**
+ * Cant really find the url anymore atm.
+ */
+class ProTip extends Entity {
 
 	/**
 	 * @var string

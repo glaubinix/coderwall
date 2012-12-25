@@ -2,7 +2,7 @@
 
 namespace Glaubinix\Coderwall\Receive;
 
-class Account {
+class Account extends Entity {
 
 	/**
 	 * @var string

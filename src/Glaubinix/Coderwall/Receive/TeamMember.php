@@ -2,7 +2,7 @@
 
 namespace Glaubinix\Coderwall\Receive;
 
-class TeamMember {
+class TeamMember extends Entity {
 
 	/**
 	 * @var string
